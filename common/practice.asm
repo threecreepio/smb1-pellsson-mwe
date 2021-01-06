@@ -683,15 +683,21 @@ menu_input:
 		ldx BANK_SELECTED
 		cpx #BANK_ORG
 		bne @world_lost
-		and #$07
-		jmp @save_world
+		ldy #$09
+		sty $01
+		dey
+		jmp @save_world1
 @world_lost:
-		cmp #$0D
+		ldy #$0D
+		sty $01
+		dey
+@save_world1:
+		cmp $01
 		bcc @save_world
 		lda $0
 		cmp #1 ; going right
 		beq @going_left
-		lda #$0C
+		tya
 		bne @save_world
 @going_left:
 		lda #$00

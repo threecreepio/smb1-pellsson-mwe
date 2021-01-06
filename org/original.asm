@@ -713,7 +713,7 @@ WarpZoneWelcome:
 
 WarpZoneNumbers:
   .byte $04, $03, $02, $00         ; warp zone numbers, note spaces on middle
-  .byte $24, $05, $24, $00         ; zone, partly responsible for
+  .byte $09, $05, $09, $00         ; zone, partly responsible for
   .byte $08, $07, $06, $00         ; the minus world
 
 GameTextOffsets:
@@ -2778,6 +2778,7 @@ EnemyDataAddrLow:
       .byte <E_GroundArea13, <E_GroundArea14, <E_GroundArea15, <E_GroundArea16, <E_GroundArea17, <E_GroundArea18
       .byte <E_GroundArea19, <E_GroundArea20, <E_GroundArea21, <E_GroundArea22, <E_UndergroundArea1
       .byte <E_UndergroundArea2, <E_UndergroundArea3, <E_WaterArea1, <E_WaterArea2, <E_WaterArea3
+      .byte <MWELevel1
 
 EnemyDataAddrHigh:
       .byte >E_CastleArea1, >E_CastleArea2, >E_CastleArea3, >E_CastleArea4, >E_CastleArea5, >E_CastleArea6
@@ -2786,12 +2787,13 @@ EnemyDataAddrHigh:
       .byte >E_GroundArea13, >E_GroundArea14, >E_GroundArea15, >E_GroundArea16, >E_GroundArea17, >E_GroundArea18
       .byte >E_GroundArea19, >E_GroundArea20, >E_GroundArea21, >E_GroundArea22, >E_UndergroundArea1
       .byte >E_UndergroundArea2, >E_UndergroundArea3, >E_WaterArea1, >E_WaterArea2, >E_WaterArea3
+      .byte >MWELevel1
 
 AreaDataHOffsets:
-      .byte $00, $03, $19, $1c
+      .byte $00, $04, $1A, $1D
 
 AreaDataAddrLow:
-      .byte <L_WaterArea1, <L_WaterArea2, <L_WaterArea3, <L_GroundArea1, <L_GroundArea2, <L_GroundArea3
+      .byte <L_WaterArea1, <L_WaterArea2, <L_WaterArea3, <L_GroundArea7, <L_GroundArea1, <L_GroundArea2, <L_GroundArea3
       .byte <L_GroundArea4, <L_GroundArea5, <L_GroundArea6, <L_GroundArea7, <L_GroundArea8, <L_GroundArea9
       .byte <L_GroundArea10, <L_GroundArea11, <L_GroundArea12, <L_GroundArea13, <L_GroundArea14, <L_GroundArea15
       .byte <L_GroundArea16, <L_GroundArea17, <L_GroundArea18, <L_GroundArea19, <L_GroundArea20, <L_GroundArea21
@@ -2799,7 +2801,7 @@ AreaDataAddrLow:
       .byte <L_CastleArea2, <L_CastleArea3, <L_CastleArea4, <L_CastleArea5, <L_CastleArea6
 
 AreaDataAddrHigh:
-      .byte >L_WaterArea1, >L_WaterArea2, >L_WaterArea3, >L_GroundArea1, >L_GroundArea2, >L_GroundArea3
+      .byte >L_WaterArea1, >L_WaterArea2, >L_WaterArea3, >L_GroundArea7, >L_GroundArea1, >L_GroundArea2, >L_GroundArea3
       .byte >L_GroundArea4, >L_GroundArea5, >L_GroundArea6, >L_GroundArea7, >L_GroundArea8, >L_GroundArea9
       .byte >L_GroundArea10, >L_GroundArea11, >L_GroundArea12, >L_GroundArea13, >L_GroundArea14, >L_GroundArea15
       .byte >L_GroundArea16, >L_GroundArea17, >L_GroundArea18, >L_GroundArea19, >L_GroundArea20, >L_GroundArea21
@@ -6204,6 +6206,7 @@ World5Areas: .byte $2a, $31, $26, $62
 World6Areas: .byte $2e, $23, $2d, $60
 World7Areas: .byte $33, $29, $01, $27, $64
 World8Areas: .byte $30, $32, $21, $65
+.byte $00, $03, $27, $44, $44
 
 ;-------------------------------------------------------------------------------------
 
@@ -11988,7 +11991,9 @@ EnemyAnimTimingBMask:
       .byte $08, $18
 
 JumpspringFrameOffsets:
-      .byte $18, $19, $1a, $19, $18
+      .byte $18, $19
+MWELevel1:
+      .byte $1a, $19, $18
 
 EnemyGfxHandler:
       lda Enemy_Y_Position,x      ;get enemy object vertical position

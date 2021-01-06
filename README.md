@@ -1,3 +1,7 @@
+# Minus world patch
+
+This patch adds Minus World Ending stages to Pellsson!
+
 # SMB & SMB2J Practice ROM
 
 A speedrun practice ROM for Super Mario Bros. and Super Mario Bros 2 - The Lost Levels.
@@ -81,7 +85,7 @@ save in Zelda (without savestates), power off the system, and load (without usin
 
 First download the desired version below:
 
-- [Version 5.5 - IPS](https://github.com/pellsson/smb/raw/master/smb-v5.5.ips)
+- [IPS](https://github.com/threecreepio/smb1-pellsson-mwe/raw/master/patch.ips)
 
 Then simply apply that IPS (using for instance Lunar IPS) to the an original, unmodified version of the Super Mario Bros. (US/World) ROM. *DO NOT* use The Lost Levels. The MD5 checksum for the ROM you should be using is `811b027eaf99c2def7b933c5208636de`.
 

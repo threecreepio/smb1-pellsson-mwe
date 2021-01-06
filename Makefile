@@ -1,5 +1,6 @@
 AS = ca65
 LD = ld65
+IPS = flips
 AFLAGS = -W0 -U -I inc
 OUT = build
 OBJECTS = $(OUT)/intro.o \
@@ -27,7 +28,10 @@ INCS = inc/wram.inc \
 
 GEN_SCENARIOS = scen/scenario_data.asm
 
-all: smb.nes
+all: patch.ips
+
+patch.ips: smb.nes
+	$(IPS) --create --ips original.nes smb.nes patch.ips
 
 run: smb.nes
 	wine fceux/fceux.exe smb.nes
